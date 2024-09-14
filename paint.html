@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Mukees Khan - Personal Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, rgb(157, 80, 187), #6E48AA);
+            color: #fff;
+            overflow-x: hidden; 
+        }
+
+        nav {
+            background: linear-gradient(45deg, #7F00FF, #E100FF);
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 2%;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color:aqua;
+        }
+
+        .dropbox {
+            position: relative;
+            display: inline-block;
+        }
+
+        select {
+            background-color: transparent;
+            color: rgb(255, 255, 255);
+            border: none;
+            padding: 1.5% 3%;
+            border-radius: 5%;
+            font-size: 100%;
+            appearance: auto;
+            outline: none;
+            box-shadow: 0 4% 10% rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        select option {
+            background:rgb(157, 80, 187);
+            color: rgb(255, 255, 255);
+        }
+        
+
+        select:hover {
+            text-decoration: underline;
+            color:aqua;
+        }
+
+        select option:hover {
+            text-decoration: underline;
+            color:rgba(0, 229, 255, 0.984);
+        }
+
+
+        section {
+            padding: 5% 5%;
+            text-align: center;
+            border-radius: 2%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 0.2%px;
+        }
+
+        video {
+            all: unset;
+            width: 540px;
+            height: auto;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100vw;
+            box-sizing: border-box;
+            margin-bottom: 5%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href=index.html>Home</a></li>
+                <li><a href="#Experience">Education And Experience</a></li>
+                <li><a href="#MySocials">My Socials</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Achievements">Achievements</a></li>
+                <div class="dropbox">
+                    <select id="projects" name="My Projects">
+                        <option value="">My Projects</option>
+                        <option value="/paint.html">Paint Application</option>
+                        <option value="/excel.html">Microsoft Excel</option>
+                        <option value="/ludo.html">Ludo</option>
+                        <option value="/kitabcha.html">Kitabcha</option>
+                    </select>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    
+    <!--Trying inline css here -->
+    <section>
+        <h2 style="font-size: 200%; font-weight: bold; margin-bottom:0.2%;">
+          A Paint Application in Python
+        </h2>
+        <br>
+        <p style="font-size: 100%; font-weight: normal; margin-top: 0; text-align: centered;">
+          This was a univeristy project in my object oriented programming course. I developed a paint application using
+          <strong>TKINTER Library</strong> in python. The application supports all basic paint functionality, allowing
+          different shapes, brushes, save, load, and erase features. The canvas also includes zoom, select and move functionality
+          for editing.
+        </p>
+    </section>
+    
+    <br>
+
+    <div class="video-container">
+        <h3><strong>Paint Application In Python</strong></h3>
+        <video controls>
+            <source src="BSCS22021.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</body>
