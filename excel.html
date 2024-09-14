@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, rgb(157, 80, 187), #6E48AA);
             color: #fff;
-            overflow-x: hidden; 
+            overflow-x: auto;
         }
 
         nav {
@@ -87,29 +87,6 @@
             margin: 0.2%px;
         }
 
-        video {
-            all: unset;
-            width: 540px;
-            height: auto;
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            display: block;
-            margin: 0 auto;
-        }
-
-        .video-container {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            width: 100vw;
-            box-sizing: border-box;
-            margin-bottom: 5%;
-        }
-
         footer {
             background-color: #333;
             color: #fff;
@@ -119,6 +96,7 @@
             bottom: 0;
             width: 100%;
         }
+
 
     </style>
 </head>
@@ -155,25 +133,26 @@
     <!--Trying inline css here -->
     <section>
         <h2 style="font-size: 200%; font-weight: bold; margin-bottom:0.2%;">
-          A Paint Application in Python
+          Microsoft Excel Replica Using Linked List
         </h2>
         <br>
         <p style="font-size: 100%; font-weight: normal; margin-top: 0; text-align: centered;">
-          This was a univeristy project in my object oriented programming course. I developed a paint application using
-          <strong>TKINTER Library</strong> in python. The application supports all basic paint functionality, allowing
-          different shapes, brushes, save, load, and erase features. The canvas also includes zoom, select and move functionality
-          for editing.
+          This was a univeristy project in my Data Structures And Algorithms course. I developed an excel or google sheets
+          replica using a self defined cell that had an up, down, left, and right pointer. Using this as a building, i
+          created a linked sheet, where you can insert and delete rows and columns. It also has common mathematical functions
+          like maximum, minimum, and average.
         </p>
     </section>
     
     <br>
 
-    <div class="video-container">
-        <h3><strong>Paint Application In Python</strong></h3>
-        <video controls>
-            <source src="BSCS22021.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 2%;">
+        <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/_AQ5YculdD4?si=SD6lQjV6-ik4jOhX" 
+            title="YouTube video player" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
     </div>
 
     <br>
