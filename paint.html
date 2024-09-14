@@ -17,6 +17,9 @@
         nav {
             background: linear-gradient(45deg, #7F00FF, #E100FF);
             padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
         }
 
@@ -25,59 +28,58 @@
             padding: 0;
             margin: 0;
             display: flex;
+            justify-content: space-between; /* Distributes items evenly */
+            width: 100%; /* Ensures it takes up the full width */
         }
 
         nav ul li {
-            margin: 0 2%;
+            flex-grow: 1; /* Makes each list item take up an equal portion of the available space */
+            text-align: center; /* Centers the text in each list item */
+            margin: 0; /* Remove extra margin */
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
+            font-size: 100%;
+            padding: 2% 2%;
+            display: inline-block;
+        }
+
+        nav select {
+            background-color: transparent;
+            color: rgb(255, 255, 255);
+            padding: 5px 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            appearance: auto;
+            text-align: center;
+        }
+
+        nav select option {
+            background: rgb(157, 80, 187);
+            color: rgb(255, 255, 255);
+        }
+
+        nav li select {
+            margin-left: 15px;
         }
 
         nav a:hover {
             text-decoration: underline;
-            color:aqua;
+            color: aqua;
         }
 
-        .dropbox {
-            position: relative;
-            display: inline-block;
-        }
-
-        select {
-            background-color: transparent;
-            color: rgb(255, 255, 255);
-            border: none;
-            padding: 1.5% 3%;
-            border-radius: 5%;
-            font-size: 100%;
-            appearance: auto;
-            outline: none;
-            box-shadow: 0 4% 10% rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            text-align: center;
-        }
-
-        select option {
-            background:rgb(157, 80, 187);
-            color: rgb(255, 255, 255);
-        }
-        
-
-        select:hover {
+        nav select:hover {
             text-decoration: underline;
-            color:aqua;
+            color: aqua;
         }
 
-        select option:hover {
+        nav select option:hover {
             text-decoration: underline;
-            color:rgba(0, 229, 255, 0.984);
+            color: rgba(0, 229, 255, 0.984);
         }
-
 
         section {
             padding: 5% 5%;
@@ -126,21 +128,21 @@
     <header>
         <nav>
             <ul>
-                <li><a href=index.html>Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#About">About Me</a></li>
                 <li><a href="index.html#Experience">Education And Experience</a></li>
+                <li><a href="index.html#Projects">Projects Portfolio</a></li>
                 <li><a href="index.html#MySocials">My Socials</a></li>
                 <li><a href="index.html#Skills">Skills</a></li>
                 <li><a href="index.html#Achievements">Achievements</a></li>
-                <div class="dropbox">
+                <li>
                     <select id="projects" name="My Projects">
                         <option value="">My Projects</option>
                         <option value="/paint.html">Paint Application</option>
                         <option value="/excel.html">Microsoft Excel</option>
-                        <option value="/ludo.html">Ludo</option>
                         <option value="/kitabcha.html">Kitabcha</option>
                     </select>
-                </div>
+                </li>
             </ul>
         </nav>
         <script>
