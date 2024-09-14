@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, rgb(157, 80, 187), #6E48AA);
             color: #fff;
-            overflow-x: hidden; 
+            overflow-x: auto;
         }
 
         nav {
@@ -81,35 +81,13 @@
             color: rgba(0, 229, 255, 0.984);
         }
 
+
         section {
             padding: 5% 5%;
             text-align: center;
             border-radius: 2%;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin: 0.2%px;
-        }
-
-        video {
-            all: unset;
-            width: 540px;
-            height: auto;
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            display: block;
-            margin: 0 auto;
-        }
-
-        .video-container {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            width: 100vw;
-            box-sizing: border-box;
-            margin-bottom: 5%;
         }
 
         footer {
@@ -121,6 +99,17 @@
             bottom: 0;
             width: 100%;
         }
+
+        .image-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .image-row img {
+            width: 20%;
+            height: 20%;
+        }
+
 
     </style>
 </head>
@@ -155,31 +144,28 @@
         </script>
     </header>
     
-    <!--Trying inline css here -->
+
     <section>
         <h2 style="font-size: 200%; font-weight: bold; margin-bottom:0.2%;">
-          A Paint Application in Python
+          Kitabcha A Manga Library Management And Reading APP
         </h2>
         <br>
         <p style="font-size: 100%; font-weight: normal; margin-top: 0; text-align: centered;">
-          This was a univeristy project in my object oriented programming course. I developed a paint application using
-          <strong>TKINTER Library</strong> in python. The application supports all basic paint functionality, allowing
-          different shapes, brushes, save, load, and erase features. The canvas also includes zoom, select and move functionality
-          for editing.
+            This is a group project in our university's Database course. Me along with 3 other amazing
+            teammates developed a mobile application in which users can have multiple profiles, and
+            manage their own library of mangas by making custom categories. The users can read mangas 
+            through the app and the app automatically keeps track of their progress. The application was
+            built in <strong>KOTLIN</strong>, where we used <strong>JET-PACK Compose</strong> for the UX
+             and <strong>ROOM DATABASE</strong> for implementing the backend database.
         </p>
+        <br>
+        <div class="image-row">
+            <img src="assets/login.jpg" alt="Login Image">
+            <img src="assets/find.jpg" alt="Finding Manga Image">
+            <img src="assets/manga.jpg" alt="Manga Content Image">
+            <img src="assets/reader.jpg" alt="Reader Image">
+        </div>
     </section>
-    
-    <br>
-
-    <div class="video-container">
-        <h3><strong>Paint Application In Python</strong></h3>
-        <video controls>
-            <source src="assets/BSCS22021.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <br>
 
     <footer>
         <p>&copy; 2024 Muhammad Mukees Khan. All Rights Reserved.</p>
