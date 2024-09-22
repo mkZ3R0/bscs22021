@@ -235,13 +235,19 @@
           Microsoft Excel Replica Using Linked List
         </h2>
         <br>
-        <p style="font-size: 100%; font-weight: normal; margin-top: 0; text-align: centered;">
-          This was a univeristy project in my Data Structures And Algorithms course. I developed an excel or google sheets
-          replica using a self defined cell that had an up, down, left, and right pointer. Using this as a building, i
-          created a linked sheet, where you can insert and delete rows and columns. It also has common mathematical functions
-          like maximum, minimum, and average.
+        <p id="description" style="font-size: 100%; font-weight: normal; margin-top: 0; text-align: centered;">
+
         </p>
     </section>
+
+    <script src="excel-description.js"></script>
+
+    <script>
+        const textBox=document.getElementById("description");
+        
+        textBox.innerHTML=excelDescription;
+
+    </script>
     
 
     <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 2%;">
