@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Mukees Khan - Personal Portfolio</title>
     <style>
-        body {
+               body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -93,16 +93,31 @@
             width: 100%;
         }
 
-        @media (min-width: 600px) {
-            body {
-                margin: 0;
-                padding: 0;
-                font-family: Arial, sans-serif;
-                background: linear-gradient(135deg, rgb(157, 80, 187), #6E48AA);
-                color: #fff;
-                overflow-x: auto;
+        /* Mobile View: Hide the nav menu initially and show hamburger icon */
+        @media (max-width: 600px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
             }
 
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 30px;
+                color: white;
+                padding: 10px;
+                text-align: center;
+                background: linear-gradient(45deg, #7F00FF, #E100FF);
+                width: 100%;
+            }
+
+            .nav-active {
+                display: flex;
+            }
+        }
+
+        /* Desktop View */
+        @media (min-width: 600px) {
             nav {
                 background: linear-gradient(45deg, #7F00FF, #E100FF);
                 padding: 15px;
@@ -206,6 +221,10 @@
                 font-size: 20px;
             }
 
+            .hamburger {
+                display: none;
+            }
+
         }
 
 
@@ -214,6 +233,8 @@
 </head>
 <body>
     <header>
+        <div class="hamburger">&#9776;</div>
+            
         <nav>
             <ul>
                 <li><a href="index.html"><strong>Muhammad Mukees Khan</strong></a></li>
@@ -233,7 +254,12 @@
                 </li>
             </ul>
         </nav>
+
         <script>
+            document.querySelector('.hamburger').addEventListener('click', function() {
+                document.querySelector('nav ul').classList.toggle('nav-active');
+            });
+
             document.getElementById('projects').addEventListener('change', function() {
                 var selectedValue = this.value;
                 if (selectedValue) {
