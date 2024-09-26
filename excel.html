@@ -270,6 +270,34 @@
                 }
             });
         </script>
+
+        <script>
+            function checkScreenSize() {
+                const navbar = document.getElementById("navbar");
+                const menuIcon = document.querySelector(".menu-icon");
+
+                if (window.innerWidth <= 600) {
+                    // Mobile view
+                    navbar.style.display = "none"; // Hide the navbar by default
+                    menuIcon.style.display = "block"; // Show the menu icon
+                } else {
+                    // Desktop view
+                    navbar.style.display = "flex"; // Show the navbar
+                    menuIcon.style.display = "none"; // Hide the menu icon
+                }
+            }
+
+            // Call the function when the page loads
+            window.onload = checkScreenSize;
+
+            // Call the function when the window is resized
+            window.onresize = checkScreenSize;
+
+            function toggleMenu() {
+                const navbar = document.getElementById("navbar");
+                navbar.style.display = (navbar.style.display === "block") ? "none" : "block";
+            }
+        </script>
     </header>
     
     <!--Trying inline css here -->
