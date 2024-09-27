@@ -58,7 +58,7 @@
             border: none;
             cursor: pointer;
             appearance: auto;
-            text-align: center;
+            text-align: left;
         }
 
         nav select option {
@@ -93,17 +93,42 @@
             width: 100%;
         }
 
-        @media (min-width: 600px) {
-            body {
-                margin: 0;
-                padding: 0;
-                font-family: Arial, sans-serif;
-                background: linear-gradient(135deg, rgb(157, 80, 187), #6E48AA);
-                color: #fff;
-                overflow-x: auto;
+        #navbar {
+            display: none;
+        }
+
+        /* Menu icon for mobile view */
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .menu-icon {
+                display: block;
+                padding: 10px;
+                color: white;
             }
 
-            nav {
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                margin: 0px 0;
+            }
+
+            #drop{
+                width: 100%;
+                margin-top: 2%;
+                text-align: left;
+            }
+        }
+
+        @media (min-width: 600px) {
+            #navbar {
                 background: linear-gradient(45deg, #7F00FF, #E100FF);
                 padding: 15px;
                 display: flex;
@@ -156,7 +181,7 @@
             }
 
             nav li select {
-                margin-left: 15px;
+                margin: 0%;
             }
 
             nav a:hover {
@@ -208,13 +233,12 @@
 
         }
 
-
-
     </style>
 </head>
 <body>
     <header>
-        <nav>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="navbar">
             <ul>
                 <li><a href="index.html"><strong>Muhammad Mukees Khan</strong></a></li>
                 <li><a href="index.html#About">About Me</a></li>
@@ -223,7 +247,7 @@
                 <li><a href="index.html#MySocials">My Socials</a></li>
                 <li><a href="index.html#Skills">Skills</a></li>
                 <li><a href="index.html#Achievements">Achievements</a></li>
-                <li>
+                <li id="drop">
                     <select id="projects" name="My Projects">
                         <option value="">My Projects</option>
                         <option value="/paint.html">Paint Application</option>
@@ -233,13 +257,46 @@
                 </li>
             </ul>
         </nav>
+
         <script>
+            function toggleMenu() {
+                const navbar = document.getElementById("navbar");
+                navbar.style.display = (navbar.style.display === "block") ? "none" : "block";
+            }
             document.getElementById('projects').addEventListener('change', function() {
                 var selectedValue = this.value;
                 if (selectedValue) {
                     window.location.href = selectedValue;
                 }
             });
+        </script>
+
+        <script>
+            function checkScreenSize() {
+                const navbar = document.getElementById("navbar");
+                const menuIcon = document.querySelector(".menu-icon");
+
+                if (window.innerWidth <= 600) {
+                    // Mobile view
+                    navbar.style.display = "none"; // Hide the navbar by default
+                    menuIcon.style.display = "block"; // Show the menu icon
+                } else {
+                    // Desktop view
+                    navbar.style.display = "flex"; // Show the navbar
+                    menuIcon.style.display = "none"; // Hide the menu icon
+                }
+            }
+
+            // Call the function when the page loads
+            window.onload = checkScreenSize;
+
+            // Call the function when the window is resized
+            window.onresize = checkScreenSize;
+
+            function toggleMenu() {
+                const navbar = document.getElementById("navbar");
+                navbar.style.display = (navbar.style.display === "block") ? "none" : "block";
+            }
         </script>
     </header>
     

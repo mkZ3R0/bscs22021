@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Mukees Khan - Personal Portfolio</title>
     <style>
-          body {
+         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -14,17 +14,17 @@
             overflow-x: hidden;
         }
 
-        header {
-            position: sticky;
-            top: 0;
-        }
-
         nav {
             background: linear-gradient(45deg, #7F00FF, #E100FF);
             padding: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
         }
 
         nav ul {
@@ -58,7 +58,7 @@
             border: none;
             cursor: pointer;
             appearance: auto;
-            text-align: center;
+            text-align: left;
         }
 
         nav select option {
@@ -88,6 +88,17 @@
             width: 100%;
         }
 
+        #navbar {
+            display: none;
+        }
+
+        /* Menu icon for mobile view */
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
         .image-row {
             display: flex;
             flex-direction: column;
@@ -100,6 +111,29 @@
             height: auto;
         }
 
+        @media (max-width: 600px) {
+            .menu-icon {
+                display: block;
+                padding: 10px;
+                color: white;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                margin: 0px 0;
+            }
+
+            #drop{
+                width: 100%;
+                margin-top: 2%;
+                text-align: left;
+            }
+        }
+
         @media (min-width: 600px) {
             body {
                 margin: 0;
@@ -110,7 +144,7 @@
                 overflow-x: auto;
             }
 
-            nav {
+            #navbar {
                 background: linear-gradient(45deg, #7F00FF, #E100FF);
                 padding: 15px;
                 display: flex;
@@ -163,7 +197,7 @@
             }
 
             nav li select {
-                margin-left: 15px;
+                margin: 0%;
             }
 
             nav a:hover {
@@ -190,6 +224,11 @@
                 margin: 0.2%px;
             }
 
+            iframe {
+                width: 75%;
+                height: 540px;
+            }
+
             footer {
                 background-color: #333;
                 color: #fff;
@@ -211,6 +250,7 @@
                 height: 20%;
             }
 
+
             section h2{
                 font-size: 28px;
             }
@@ -218,6 +258,7 @@
             section p{
                 font-size: 20px;
             }
+
         }
 
 
@@ -225,7 +266,8 @@
 </head>
 <body>
     <header>
-        <nav>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="navbar">
             <ul>
                 <li><a href="index.html"><strong>Muhammad Mukees Khan</strong></a></li>
                 <li><a href="index.html#About">About Me</a></li>
@@ -234,7 +276,7 @@
                 <li><a href="index.html#MySocials">My Socials</a></li>
                 <li><a href="index.html#Skills">Skills</a></li>
                 <li><a href="index.html#Achievements">Achievements</a></li>
-                <li>
+                <li id="drop">
                     <select id="projects" name="My Projects">
                         <option value="">My Projects</option>
                         <option value="/paint.html">Paint Application</option>
@@ -244,13 +286,46 @@
                 </li>
             </ul>
         </nav>
+
         <script>
+            function toggleMenu() {
+                const navbar = document.getElementById("navbar");
+                navbar.style.display = (navbar.style.display === "block") ? "none" : "block";
+            }
             document.getElementById('projects').addEventListener('change', function() {
                 var selectedValue = this.value;
                 if (selectedValue) {
                     window.location.href = selectedValue;
                 }
             });
+        </script>
+
+        <script>
+            function checkScreenSize() {
+                const navbar = document.getElementById("navbar");
+                const menuIcon = document.querySelector(".menu-icon");
+
+                if (window.innerWidth <= 600) {
+                    // Mobile view
+                    navbar.style.display = "none"; // Hide the navbar by default
+                    menuIcon.style.display = "block"; // Show the menu icon
+                } else {
+                    // Desktop view
+                    navbar.style.display = "flex"; // Show the navbar
+                    menuIcon.style.display = "none"; // Hide the menu icon
+                }
+            }
+
+            // Call the function when the page loads
+            window.onload = checkScreenSize;
+
+            // Call the function when the window is resized
+            window.onresize = checkScreenSize;
+
+            function toggleMenu() {
+                const navbar = document.getElementById("navbar");
+                navbar.style.display = (navbar.style.display === "block") ? "none" : "block";
+            }
         </script>
     </header>
     
